@@ -1,18 +1,38 @@
+import { Client } from '@services/ClientsService/types';
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 
-import { ClientData, Container, Name, State, StateText } from './styles';
+import {
+  Button,
+  ClientData,
+  Container,
+  Content,
+  Name,
+  State,
+  StateText,
+} from './styles';
 
-function Card() {
+interface Props {
+  isLast?: boolean;
+  client: Client;
+}
+
+function Card(props: Props) {
+  const { isLast, client } = props;
+
   return (
-    <Container>
-      <ClientData>
-        <Name>Cliente</Name>
-        <State>
-          <StateText>PB</StateText>
-        </State>
-      </ClientData>
-      <Text>0</Text>
+    <Container isLast={isLast}>
+      <Button onPress={() => console.log(client)}>
+        <Content>
+          <ClientData>
+            <State>
+              <StateText>{client.estado}</StateText>
+            </State>
+            <Name>{client.nome}</Name>
+          </ClientData>
+          <Text>{client.id}</Text>
+        </Content>
+      </Button>
     </Container>
   );
 }

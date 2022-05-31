@@ -7,6 +7,7 @@ import 'react-native-gesture-handler';
 import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
 import { Details } from '@screens/Details';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Screens } from '@screens/types';
 
 export default function App() {
   useEffect(() => {
@@ -18,8 +19,8 @@ export default function App() {
       <ExpoStatusBar style="auto" />
       <Router>
         <Stack key="root">
-          <Scene key="home" component={Home} hideNavBar />
-          <Scene key="details" component={Details} hideNavBar />
+          <Scene key={Screens.HOME} component={Home} hideNavBar />
+          <Scene key={Screens.DETAILS} component={Details} hideNavBar />
         </Stack>
       </Router>
     </SafeAreaView>

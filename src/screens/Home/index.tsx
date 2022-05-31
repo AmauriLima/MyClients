@@ -10,10 +10,16 @@ import { Actions } from 'react-native-router-flux';
 
 import { Container } from './styles';
 
+import Logo from '@assets/images/logo.svg';
+import PageHeader from '@components/PageHeader';
+
 export function Home() {
   return (
     <Container>
-      <Text>Pagina Inicial</Text>
+      <PageHeader>
+        <Logo width={250} />
+      </PageHeader>
+
       <TouchableOpacity onPress={() => Actions.push('details')}>
         <Text>Ir para detalhes</Text>
       </TouchableOpacity>

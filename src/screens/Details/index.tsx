@@ -31,7 +31,7 @@ export function Details(props: Props) {
 
       <Footer>
         <OutlinedButton onPress={handleGoHome}>
-          <Label>Voltar para home</Label>
+          <Label>Voltar</Label>
         </OutlinedButton>
       </Footer>
     </Container>

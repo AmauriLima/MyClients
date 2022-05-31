@@ -5,7 +5,7 @@ import { Text, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 import Logo from '@assets/images/logo.svg';
-import { Container, Content } from './styles';
+import { Container, Content, Footer, Label, OutlinedButton } from './styles';
 import ExtendedCard from '@components/ExtendedCard';
 
 interface Props {
@@ -14,6 +14,10 @@ interface Props {
 
 export function Details(props: Props) {
   const { client } = props;
+
+  function handleGoHome() {
+    Actions.home();
+  }
 
   return (
     <Container>
@@ -25,9 +29,11 @@ export function Details(props: Props) {
         <ExtendedCard client={client} />
       </Content>
 
-      <TouchableOpacity onPress={() => Actions.home()}>
-        <Text>Voltar para home</Text>
-      </TouchableOpacity>
+      <Footer>
+        <OutlinedButton onPress={handleGoHome}>
+          <Label>Voltar para home</Label>
+        </OutlinedButton>
+      </Footer>
     </Container>
   );
 }

@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View<{ isLast?: boolean }>`
   margin-bottom: ${({ isLast }) => (isLast ? '0' : '16px')};
-  background-color: #fafafa;
+  background-color: #f7f7f7;
   padding: 8px;
   border-radius: 4px;
 `;

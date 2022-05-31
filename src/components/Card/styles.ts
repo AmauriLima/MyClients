@@ -39,11 +39,15 @@ export const Name = styled.Text`
   font-size: 16px;
 `;
 
-export const State = styled.View`
+interface StateProps {
+  isLeft?: boolean;
+}
+
+export const State = styled.View<StateProps>`
   background-color: #e0e3ff;
   padding: 0 8px;
   border-radius: 4px;
-  margin-right: 8px;
+  margin: ${({ isLeft }) => (isLeft ? '0 8px 0 0' : '0 0 0 8px')};
 `;
 
 export const StateText = styled.Text`

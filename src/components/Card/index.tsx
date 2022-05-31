@@ -33,7 +33,7 @@ function Card(props: Props) {
       <Button onPress={handleClick}>
         <Content>
           <ClientData>
-            <State>
+            <State isLeft>
               <StateText>{client.estado}</StateText>
             </State>
             <Name>{client.nome}</Name>

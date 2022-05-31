@@ -1,16 +1,13 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "baseUrl": ".",
-    "target": "ESNext",
-    "module": "ESNext",
-    "jsx": "react-jsx",
+    "baseUrl": "./",
     "strict": true,
     "paths": {
       "@services/*": ["./src/services/*"],
       "@utils/*": ["./src/utils/*"],
+      "@screens/*": ["./src/screens/*"],
       "@components/*": ["./src/components/*"],
     },
   },
-  "include": ["src"],
 }

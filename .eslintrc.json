@@ -68,6 +68,7 @@
           "/^@services/",
           "/^@utils/",
           "/^@components/",
+          "/^@screens/",
           ["parent", "sibling", "index"]
         ],
         "alphabetize": {

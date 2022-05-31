@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "${({ theme }) => theme.colors.white}fff"
+      "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -24,7 +24,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "${({ theme }) => theme.colors.white}FFF"
+        "backgroundColor": "#FFFFFF"
       },
       "package": "com.mob4pay.myclients",
       "versionCode": 1

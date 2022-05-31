@@ -8,13 +8,13 @@ type IContainer = {
 export const Button = styled.TouchableOpacity.attrs({
   activeOpacity: 0.5,
 })`
-  border-color: #fff;
+  border-color: ${({ theme }) => theme.colors.white};
   flex: 1;
   width: 100%;
 `;
 
 export const Container = styled.View<IContainer>`
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.white};
   border-radius: 8px;
   elevation: 1;
   margin-bottom: ${({ isLast }) => (isLast ? '2px' : '16px')};
@@ -44,14 +44,14 @@ interface StateProps {
 }
 
 export const State = styled.View<StateProps>`
-  background-color: #e0e3ff;
+  background-color: ${({ theme }) => theme.colors.primary.light};
   padding: 0 8px;
   border-radius: 4px;
   margin: ${({ isLeft }) => (isLeft ? '0 8px 0 0' : '0 0 0 8px')};
 `;
 
 export const StateText = styled.Text`
-  color: #5061fc;
+  color: ${({ theme }) => theme.colors.primary.main};
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1px;

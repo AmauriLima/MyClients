@@ -9,7 +9,7 @@ export const Container = styled.View`
 `;
 
 export const Content = styled.View`
-  background: #fff;
+  background: ${({ theme }) => theme.colors.white};
   width: 80%;
   padding: 16px;
   border-radius: 8px;

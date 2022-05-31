@@ -8,6 +8,8 @@ import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
 import { Details } from '@screens/Details';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Screens } from '@screens/types';
+import { ThemeProvider } from 'styled-components/native';
+import { defaultTheme } from '@assets/themes/default';
 
 export default function App() {
   useEffect(() => {
@@ -15,15 +17,17 @@ export default function App() {
   }, []);
 
   return (
-    <SafeAreaView style={styles.container}>
-      <ExpoStatusBar style="auto" />
-      <Router>
-        <Stack key="root">
-          <Scene key={Screens.HOME} component={Home} hideNavBar />
-          <Scene key={Screens.DETAILS} component={Details} hideNavBar />
-        </Stack>
-      </Router>
-    </SafeAreaView>
+    <ThemeProvider theme={defaultTheme}>
+      <SafeAreaView style={styles.container}>
+        <ExpoStatusBar style="auto" />
+        <Router>
+          <Stack key="root">
+            <Scene key={Screens.HOME} component={Home} hideNavBar />
+            <Scene key={Screens.DETAILS} component={Details} hideNavBar />
+          </Stack>
+        </Router>
+      </SafeAreaView>
+    </ThemeProvider>
   );
 }
 

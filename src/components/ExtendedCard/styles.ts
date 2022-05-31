@@ -29,5 +29,5 @@ export const Body = styled.View`
 export const Address = styled.View``;
 
 export const TextStyled = styled.Text`
-  color: #444;
+  color: ${({ theme }) => theme.colors.gray[700]};
 `;

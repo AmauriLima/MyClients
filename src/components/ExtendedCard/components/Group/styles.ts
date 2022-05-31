@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View<{ isLast?: boolean }>`
   margin-bottom: ${({ isLast }) => (isLast ? '0' : '16px')};
-  background-color: #f7f7f7;
+  background-color: ${({ theme }) => theme.colors.gray[100]};
   padding: 8px;
   border-radius: 4px;
 `;
@@ -22,7 +22,7 @@ export const Line = styled.View<LineProps>`
   flex: ${({ extended }) => (extended ? 1 : 0)};
   min-width: 8px;
   height: 1px;
-  background-color: #bcbcbc;
+  background-color: ${({ theme }) => theme.colors.gray[300]};
   margin-left: ${({ extended }) => (extended ? '4px' : '0')};
   margin-right: ${({ extended }) => (extended ? '0' : '4px')};
 `;

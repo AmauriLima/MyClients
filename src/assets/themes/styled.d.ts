@@ -9,6 +9,12 @@ declare module 'styled-components/native' {
         light: string;
         main: string;
       };
+      gray: {
+        100: string;
+        200: string;
+        300: string;
+        700: string;
+      };
     };
   }
 }

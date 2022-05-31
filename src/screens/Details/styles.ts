@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #f6f5fc;
+  background-color: ${({ theme }) => theme.colors.gray[200]};
 `;
 
 export const Content = styled.View`
@@ -19,12 +19,12 @@ export const Footer = styled.View`
 export const OutlinedButton = styled.TouchableOpacity.attrs({
   activeOpacity: 0.7,
 })`
-  border: 2px solid #5061fc;
+  border: 2px solid ${({ theme }) => theme.colors.primary.main};
   padding: 8px 16px;
   border-radius: 16px;
 `;
 
 export const Label = styled.Text`
-  color: #5061fc;
+  color: ${({ theme }) => theme.colors.primary.main};
   font-weight: bold;
 `;

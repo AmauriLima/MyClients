@@ -3,6 +3,7 @@ import { DefaultTheme } from 'styled-components/native';
 export const defaultTheme = {
   colors: {
     white: '#ffffff',
+    danger: '#FC5050',
     primary: {
       light: '#e0e3ff',
       main: '#5061fc',

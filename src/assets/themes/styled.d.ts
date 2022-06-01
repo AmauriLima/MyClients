@@ -5,6 +5,7 @@ declare module 'styled-components/native' {
   export interface DefaultTheme {
     colors: {
       white: string;
+      danger: string;
       primary: {
         light: string;
         main: string;

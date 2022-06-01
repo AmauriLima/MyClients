@@ -12,6 +12,7 @@ import ClientsService from '@services/ClientsService';
 import { Client } from '@services/ClientsService/types';
 import { Button } from '@components/Card/styles';
 import Spinner from '@components/Spinner';
+import ErrorMessage from '@components/ErrorMessage';
 
 interface RenderCardProps {
   item: Client;
@@ -19,6 +20,8 @@ interface RenderCardProps {
 }
 
 export function Home() {
+  const [hasError, setHasError] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [clients, setClients] = useState<Client[]>([]);
 
   useEffect(() => {
@@ -26,9 +29,16 @@ export function Home() {
   }, []);
 
   async function loadClients() {
-    const response = await ClientsService.listClients();
-
-    setClients(response.clientes);
+    try {
+      setIsLoading(true);
+      setHasError(false);
+      const response = await ClientsService.listClients();
+      setClients(response.clientes);
+    } catch {
+      setHasError(true);
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   function renderCard(props: RenderCardProps) {
@@ -38,11 +48,21 @@ export function Home() {
   }
 
   function renderFlatlist() {
-    if (!clients.length) {
+    if (isLoading) {
       return (
         <SpinnerWrapper>
           <Spinner />
         </SpinnerWrapper>
+      );
+    }
+
+    if (!isLoading && hasError) {
+      return (
+        <ErrorMessage
+          buttonLabel="Tentar novamente"
+          message="Ocorreu um erro ao obter os seus clientes!"
+          onTryAgain={loadClients}
+        />
       );
     }
 
